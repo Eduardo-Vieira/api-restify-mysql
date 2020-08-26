@@ -1,0 +1,6 @@
+{
+    "jwt": {
+      "secret": "&@$!api-template!$@&",
+      "expiresIn": "15m"
+    }
+}
