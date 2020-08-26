@@ -5,6 +5,7 @@ Project quick start Restify by Eduardo Vieira:
 - jwt
 - cors
 - upload
+- sequelize
 
 ## Install dependencies
 
