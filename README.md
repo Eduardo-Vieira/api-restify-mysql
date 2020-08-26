@@ -1,5 +1,11 @@
 # Restify Skeleton Application for mysql
 
+Project quick start Restify by Eduardo Vieira:
+- mysql
+- jwt
+- cors
+- upload
+
 ## Install dependencies
 
 ```bash
