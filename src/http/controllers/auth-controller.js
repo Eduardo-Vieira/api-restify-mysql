@@ -4,7 +4,7 @@
  */
 
 //Repository User
-const userRepository = require('../repository/user-repository')
+const userInteraction = require('../interaction/user-interaction')
 
 const jwt = require('jsonwebtoken');
 const config = require('../../config');
@@ -12,7 +12,7 @@ const config = require('../../config');
 module.exports = {
     auth: (req, res, next) => {
         let {username, password} = req.body;
-        userRepository.getUserAuth(username, password).then(data => {
+        userInteraction.getUserAuth(username, password).then(data => {
             if(data != null){
                 let token = jwt.sign({ uid:data.uid }, config.jwt.secret, {
                     expiresIn: config.jwt.expiresIn // token expires in 15 minutes

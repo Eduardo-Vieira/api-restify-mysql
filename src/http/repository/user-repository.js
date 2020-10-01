@@ -1,24 +1,26 @@
 // Class model
 const User = require('../models/user');
-const ResponseAuth = require('../models/response-auth');
+
+
+var users = [
+    new User('Usuario Exemplo class','Administrador','admin','123','admin@email.com'),
+    new User('Usuario Exemplo class 2','Usuário','eduardo','123','eduardo@email.com',2),
+]
 
 module.exports = {
-    getUserAuth:(username, password) => {
-        return new Promise((resolve, reject) => {
-            // Model static user
-            let user = [
-                new User('1','Usuario Exemplo class','Administrador','admin','123'),
-                new User('2','Usuario Exemplo class 2','Usuário','eduardo','123'),
-            ];
-            // find user in list
-            let findUser = user.filter(el => (el.username == username && el.password == password)? el : false)[0];
-            let data = null;
-            if(findUser){
-                //Class Model ResponseAuth
-                data = new ResponseAuth(findUser.uid, findUser.name, findUser.type) 
-                console.log(data.toString())
-            } 
-            resolve(data);
-        })
+    findByEmail: async (email) => {
+        return users.find(el => el.email == email)
+    },
+    update: async (user) => {
+        let index = users.findIndex(el => el.uid == user.uid)
+        users[index] = user
+        return users[index]
+    },
+    add: async (user) => {
+        users.push(user)
+        return user
+    },
+    getAll: async ()=> {
+        return users
     }
 }

@@ -27,6 +27,7 @@
   "dependencies": {
     "mysql2": "^2.1.0",
     "restify-jwt-community": "^1.1.4",
-    "sequelize": "^6.3.4"
+    "sequelize": "^6.3.4",
+    "uuidv4": "^6.2.3"
   }
 }
